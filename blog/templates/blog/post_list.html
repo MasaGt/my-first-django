@@ -9,16 +9,12 @@
       <h1><a href="/">Django project</a></h1>
     </div>
 
-    <div>
-      <p>published: 15.12.2021, 12:14</p>
-      <h2><a href="">The first post</a></h2>
-      <p>Aenean eu leo quam. Aenean eu leo quam. Aenean eu leo quam.</p>
-    </div>
-
-    <div>
-      <p>公開日: 2021/12/15, 12:14</p>
-      <h2><a href="">2番目の記事</a></h2>
-      <p>記事のコンテンツ</p>
-    </div>
+    {%for post in data%}
+      <div>
+        <p>posted: {{ post.posted_date }}</p>
+        <h2><a href="">{{ post.title }}</a></h2>
+        <p>{{ post.content|linebreaksbr }}</p>
+      </div>
+    {%endfor%}
   </body>
 </html>
